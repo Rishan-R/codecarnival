@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <title>New Years</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <style media="screen">
+      body {
+        background-color: #9DE9FF;
+        user-select: none;
+      }
+
+      .con {
+        color: white;
+        text-shadow: 1px 1px black;
+        margin: 65px 15px 15px 15px;
+      }
+
+      .inv {
+        opacity: 0
+      }
+
+      #funFacts li {
+        font-family: "Comic Sans MS";
+      }
+
+      #funFacts {
+        background-color: #59A5FF;
+        padding: 10px;
+        list-style-type: none;
+      }
+
+      #ff {
+        font-size: 350%;
+      }
+
+      h2 {
+        font-size: 300%;
+      }
+
+      #tlOfNY {
+        font-size: 120%;
+        background-color: white;
+        border: 1pt solid black;
+        padding: 10px;
+        color: black;
+        text-shadow: none;
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top">
+      <div role="navigation">
+        <div class="container">
+          <div class="navbar-header">
+            <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".navbar-collapse">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a href="#ff" class="navbar-brand" style="color: #333; font-size: 150%;"><i class="glyphicon glyphicon-globe"></i> New Years</a>
+          </div>
+          <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav navbar-right">
+              <li id="li1" onclick="switchActive(1);" class="active"><a href="#ff">Fun Facts</a></li>
+              <li id="li2" onclick="switchActive(2);"><a href="#history">History</a></li>
+              <li id="li3" onclick="switchActive(3);"><a href="#countdown">Countdown</a></li>
+              <li><button type="button" class="btn btn-info navbar-btn"><a href="ccquiz.html" target="_blank" style="text-shadow: 0.5px 0.5px black; color: white; text-decoration: none;">Quiz</a></button></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <div class="con">
+      <h1 id="ff">New Years to Come</h1>
+      <h2>Fun Facts</h2>
+      <ul id="funFacts">
+        <li>Did you know that about 45% of Americans make New Year's Resolutions? And most of those are to lose weigth, organize, stop smoking, and more.</li>
+        <li>Santa is the most known figure on Christmas, and the Santa for New Years is Baby New Year, and is mostly pictures with a top hat and diaper, and is, according to myth, growing into a man over the year.</li>
+        <li>The song that is annually sung on New Years Day, translates to "times gone by".</li>
+        <li>Black eyed peas, ham, and cabbage are believed to be good luck to be eaten on New Year's Eve and Day.</li>
+        <li>In Times Square, midnight, 2000 pounds of confetti are dropped on the crowd.</li>
+        <li>6% of Americans don't plan to celebrate NYE.</li>
+        <li>A New Year tradition called Namahage is where men dress up as demons to scare children into behaving.</li>
+        <li>In Italy, wearing a red underwear on New Year's Eve is considered good luck for the upcoming year.</li>
+        <li>January is named after the god Janus, who is the god of gateways, doors, and passageways.</li>
+        <li>The average time that people stick with their New Year's resolutions is 36 days.</li>
+      </ul>
+      <h3 id="history" class="inv">h</h3>
+      <h2>History</h2>
+      <p id="tlOfNY">The early Roman calendar consisted of 10 months. According to the old calendar, each new year started at the vernal equinox. Romulus, the founder of rome, created the old calendar, and king Numa Pompilius was credited for adding the months Januarius and Februarius. But, the calendar fell out of sync with the sun in the passing centuries, so in 46 BC, Julius Caesar consulted the most prominent mathematicians and astronomers, and created the Julian calendar, which closely resembles the modern-day Gregorian calendar.<br><br>Julius made New Years start on January 1st to honor the god Janus. Romans celebrated by offering sacrifices to Janus, exchanging gifts with each other, decorating their homes with laurel branches and attending raucous parties. In Europe, New Years was replaced with days that had more religious significance, including December 25th and March 25th. Although, later in 1582, Pope Gregory XIII changed it back to January 1st.<br><br>Celebration often starts on the evening of December 31st, to January 1st. Some people eat various type of food in hopes of good fortune, and avoid other foods, which are believed to be bad luck. Some other customs include singing songs, or watching a fireworks display. The famous song "Auld Lang Syne" is sang in English speaking countries. The practice of making resolutions for the new year started out with the ancient Babylonians, who made certain promises to win the favor of the gods, and start the year off in the right way.</p>
+      <h3 id="countdown" class="inv">c</h3>
+      <h2 id="cDown" style="font-size: 250%;"></h2>
+    </div>
+  </body>
+  <script>
+    let c = document.getElementById("cDown");
+    let li1 = document.getElementById("li1");
+    let li2 = document.getElementById("li2");
+    let li3 = document.getElementById("li3");
+    setInterval(function(){
+      const d = new Date();
+      let m = d.getMonth();
+      let date = d.getDate();
+      let y = d.getFullYear();
+      let doy = 0;
+      if (m > 0) {
+        doy += 31;
+        if (m > 1) {
+          doy += 28;
+          if (m > 2) {
+            doy += 31;
+            if (m > 3) {
+              doy += 30;
+              if (m > 4) {
+                doy += 31;
+                if (m > 5) {
+                  doy += 30;
+                  if (m > 6) {
+                    doy += 31;
+                    if (m > 7) {
+                      doy += 30;
+                      if (m > 8) {
+                        doy += 31;
+                        if (m > 9) {
+                          doy += 30;
+                          if (m > 10) {
+                            doy += 31;
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      } else {
+        doy = 0;
+      }
+      doy += date;
+
+      c.innerText = "New Year is in " + (366 - doy) + " days, and the last New Year was " + (doy - 1) + " days ago.";
+    }, 1);
+
+    function switchActive(thing) {
+      for (var i = 1; i < 4; i++) {
+        document.getElementById("li" + i).removeAttribute("class");
+      }
+      document.getElementById("li" + thing).setAttribute("class", "active");
+    }
+  </script>
+</html>
